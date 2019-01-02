@@ -114,7 +114,7 @@ public class LoginServlet extends HttpServlet {
                     
                     ViewMessage vm = new ViewMessage();
                     try {
-                        ArrayList<Message> listMess = vm.getMessageByCurrentDate(con.getConnetion(), user.getIdSV());
+                        ArrayList<Message> listMess = vm.getMessage(con.getConnetion(), "",user.getIdSV());
                         Collections.sort(listMess);
                         for(Message i: listMess)
                             System.out.println(i.toString());

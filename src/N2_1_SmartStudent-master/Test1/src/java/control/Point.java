@@ -62,7 +62,7 @@ public class Point extends HttpServlet {
             for (int i = 0; i < lstSubject.size(); i++) {
                 averageFinal += lstSubject.get(i).getAverage();
             }
-            averageFinal = averageFinal / (lstSubject.size());
+            averageFinal = new subject().formatNumber((float) ((averageFinal / (lstSubject.size())) *0.4))  ;
             session.setAttribute("averageF", averageFinal);
             ServletContext sc = getServletContext();
             sc.getRequestDispatcher("/point_view.jsp").forward(request, response);
